@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+:root {
+  --background: #f7f3ee;
+  --surface: rgba(255, 255, 255, 0.9);
+  --text: #292523;
+  --muted: #817873;
+  --accent: #df645d;
+  --accent-dark: #c94f49;
+  --accent-soft: #fae8e5;
+  --border: #e9e1da;
+  --shadow: 0 24px 60px rgba(73, 54, 48, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(223, 100, 93, 0.12), transparent 28rem),
+    radial-gradient(circle at 85% 80%, rgba(221, 164, 105, 0.14), transparent 26rem),
+    var(--background);
+  font-family: "DM Sans", "Noto Sans KR", sans-serif;
+}
+
+body::before,
+body::after {
+  position: fixed;
+  z-index: -1;
+  border: 1px solid rgba(223, 100, 93, 0.14);
+  border-radius: 50%;
+  content: "";
+}
+
+body::before {
+  top: -9rem;
+  right: -6rem;
+  width: 18rem;
+  height: 18rem;
+}
+
+body::after {
+  bottom: -10rem;
+  left: -5rem;
+  width: 22rem;
+  height: 22rem;
+}
+
+.settings-page {
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  justify-items: center;
+  padding: 32px 20px;
+}
+
+.settings-card {
+  width: min(100%, 460px);
+  padding: 38px 44px 34px;
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  text-align: center;
+  backdrop-filter: blur(16px);
+}
+
+.settings-card__icon {
+  display: grid;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 18px;
+  place-items: center;
+  border-radius: 16px;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+}
+
+.settings-card__icon svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.eyebrow {
+  margin: 0 0 5px;
+  color: var(--accent-dark);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+h3 {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(32px, 8vw, 42px);
+  letter-spacing: -0.04em;
+}
+
+.description {
+  margin: 8px 0 30px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.field {
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #fdfaf7;
+  text-align: left;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-wrap input {
+  width: 100%;
+  min-width: 0;
+  height: 58px;
+  padding: 0 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  color: var(--text);
+  background: #fff;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.input-wrap input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(223, 100, 93, 0.14);
+}
+
+.input-wrap span {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.hint {
+  margin: 9px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  min-height: 52px;
+  margin-top: 22px;
+  border: 0;
+  border-radius: 14px;
+  color: #fff;
+  background: var(--accent);
+  box-shadow: 0 8px 20px rgba(201, 79, 73, 0.25);
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.back-button svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.back-button:hover {
+  background: var(--accent-dark);
+  box-shadow: 0 10px 24px rgba(201, 79, 73, 0.32);
+  transform: translateY(-2px);
+}
+
+.back-button:focus-visible {
+  outline: 3px solid rgba(223, 100, 93, 0.28);
+  outline-offset: 3px;
+}
+
+.back-button:active {
+  transform: translateY(0);
+}
+
+.back-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  box-shadow: none;
+  transform: none;
+}
+
+.footer-copy {
+  margin: 22px 0 0;
+  color: #aa9d95;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+}
+
+@media (max-width: 520px) {
+  .settings-card {
+    padding: 30px 20px 26px;
+    border-radius: 22px;
+  }
+
+  .field {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-button,
+  .input-wrap input {
+    transition: none;
+  }
+}

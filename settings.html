@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Pomodoro 타이머 시간 설정" />
+    <title>Setting · Pomodoro</title>
+    <link rel="stylesheet" href="settings.css" />
+    <script src="settings.js" defer></script>
+  </head>
+  <body>
+    <main class="settings-page">
+      <section class="settings-card" aria-labelledby="settings-title">
+        <div class="settings-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M19.4 13a7.2 7.2 0 0 0 .1-1 7.2 7.2 0 0 0-.1-1l2-1.6-2-3.4-2.4 1a7.6 7.6 0 0 0-1.7-1L15 3.5h-4L10.7 6A7.6 7.6 0 0 0 9 7L6.6 6l-2 3.4 2 1.6a7.2 7.2 0 0 0-.1 1 7.2 7.2 0 0 0 .1 1l-2 1.6 2 3.4L9 17a7.6 7.6 0 0 0 1.7 1l.3 2.5h4l.3-2.5a7.6 7.6 0 0 0 1.7-1l2.4 1 2-3.4-2-1.6ZM13 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z" />
+          </svg>
+        </div>
+
+        <p class="eyebrow">POMODORO</p>
+        <h3 id="settings-title">Setting</h3>
+        <p class="description">나에게 맞는 집중 시간을 설정해 보세요.</p>
+
+        <div class="field">
+          <label for="timer-minutes">타이머 시간</label>
+          <div class="input-wrap">
+            <input
+              id="timer-minutes"
+              name="timer-minutes"
+              type="number"
+              value="25"
+              min="1"
+              max="60"
+              inputmode="numeric"
+              aria-describedby="timer-hint"
+              oninput="validateTimerInput()"
+            />
+            <span>분</span>
+          </div>
+          <p id="timer-hint" class="hint">1분에서 60분 사이로 설정할 수 있어요.</p>
+        </div>
+
+        <button
+          class="back-button"
+          id="save-button"
+          type="button"
+          aria-label="설정을 저장하고 메인 페이지로 돌아가기"
+          onclick="saveTimerSettings()"
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="m10.4 5-7 7 7 7 1.4-1.4L7.2 13H21v-2H7.2l4.6-4.6L10.4 5Z" />
+          </svg>
+          메인 페이지로 돌아가기
+        </button>
+      </section>
+
+      <p class="footer-copy">FOCUS · REST · REPEAT</p>
+    </main>
+  </body>
+</html>
